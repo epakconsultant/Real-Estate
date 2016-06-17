@@ -1,0 +1,27 @@
+<template name="roles">
+    <h1>Список ролей</h1>
+    <div class="ya-actions actions-btns">
+        <a href="{{pathFor 'roleNew'}}" class="ya-secondary-btn" id="create">Добавить роль</a>
+    </div>
+    <div class="list-table">
+        <table class="ya-table">
+            <thead>
+                <tr class="pseudo-table-row table-titles">
+                    <th class="table-cell-1">
+                        <span class="sortLink">Роль</span>
+                    </th>
+                    <th class="table-cell-3">
+                        <span>Действия</span>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#each roles}}
+                    {{> roleListItem}}
+                {{else}}
+                    {{> roleListEmpty}}
+                {{/each}}
+            </tbody>
+        </table>
+    </div>
+</template>

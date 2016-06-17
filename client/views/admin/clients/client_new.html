@@ -1,0 +1,128 @@
+<template name="clientNew">
+    <div class="page-header">
+        <h1>
+            Создание клиента
+        </h1>
+    </div>
+    <div class="ya-actions">
+        <a href="#" class="ya-secondary-btn ya-btn save-btn" id="saveBtn"><span class="fa fa-pencil-square-o"></span>Сохранить</a>
+        <a href="#" class="ya-third-btn ya-btn save-btn" id="saveAndCloseBtn"><span class="fa fa-check"></span>Сохранить и закрыть</a>
+        <a href="#" class="ya-third-btn ya-btn save-btn" id="saveAndCreateBtn"><span class="fa fa-plus"></span>Сохранить и создать</a>
+        <a href={{pathFor 'clients'}} class="ya-third-btn ya-btn ya-warn" id="backBtn"><span class="fa fa-times-circle"></span>Отменить</a>
+        <a href="#" class="ya-third-btn ya-btn ya-warn" id="sendFirstSms"><span class="fa fa-mobile"></span>Отправить пригласительную СМС</a>
+    </div>
+    <div class="info-wrapper">
+        <h2 class="form-title">Персональные данные клиента:</h2>
+        <div class="info-line clearfix">
+            <div class="input-group input-text floatleft">
+                <label for="fullname">ФИО *</label>
+                <input type="text" class="ya-form-control " id="fullname" placeholder="ФИО" value="" />
+            </div>
+            <div class="input-group input-text floatleft">
+                <label for="phone">Телефон *</label>
+                <input type="text" class="ya-form-control " id="phone" placeholder="Телефон" value="" />
+            </div>
+            <div class="input-group input-text floatleft">
+                <label for="email">E-mail *</label>
+                <input type="text" class="ya-form-control " id="email" placeholder="E-mail" value="" />
+            </div>
+            <div class="input-group input-text floatleft">
+                <label for="password">Пароль *</label>
+                <input type="password" class="ya-form-control " id="password" placeholder="Пароль" value="" />
+            </div>
+        </div>
+    </div>
+    
+    <div class="info-wrapper">
+        <h2 class="form-title">Искомая недвижимость:</h2>
+        <div class="info-line clearfix">
+            <div class="input-group input-text floatleft">
+                <label for="typeofestate_ids">Тип недвижимости</label>
+                <select type="text" multiple="multiple" class="multiple-select ya-form-control" id="typeofestate_ids">
+                    {{#each typeofestates}}
+                        <option value="{{_id}}">{{typeOfEstateName}}</option>
+                    {{/each}}
+                </select>
+            </div>
+            <div class="input-group input-text floatleft">
+                <label for="cityblock_ids">Районы города</label>
+                <select type="text" multiple="multiple" class="multiple-select ya-form-control" id="cityblock_ids">
+                    {{#each cityblocks}}
+                        <option value="{{_id}}">{{cityBlockName}}</option>
+                    {{/each}}
+                </select>
+            </div>
+            <div class="input-group input-text floatleft">
+                <label for="minPrice">Цена от</label>
+                <input type="text" name="minPrice" class="ya-form-control" id="minPrice" placeholder="Цена от" value="0" />
+            </div>
+            <div class="input-group input-text floatleft">
+                <label for="maxPrice">Цена до</label>
+                <input type="text" class="ya-form-control" id="maxPrice" placeholder="Цена до" value="" />
+            </div>
+        </div>
+    </div>
+    <div class="info-wrapper">
+        <h2 class="form-title">Настройки уведомлений:</h2>
+        <div class="info-line clearfix">
+            <div class="input-group input-text floatleft">
+                <label for="notifiers">Уведомлять о новых объектах по</label>
+                <select type="text" multiple="multiple" class="multiple-select ya-form-control" id="notifiers">
+                        <option value="sms">Sms</option>
+                        <option value="email">Email</option>
+                </select>
+            </div>
+        </div>
+    </div>
+    <div class="info-wrapper">
+        <h2 class="form-title">Служебная информация:</h2>
+        <div class="info-line clearfix">
+            <div class="input-group input-text floatleft">
+                <label for="clientStatus">Статус клиента:</label>
+                <select type="text" name="clientStatus" class="ya-form-control" id="clientStatus">
+                        <option value="active" checked>Актуальный</option>
+                        <option value="adv">Рекламный</option>
+                        <option value="archive">Архивный</option>
+                </select>
+            </div>
+            <div class="input-group input-text checkbox-input floatleft">
+                <input  type="checkbox" class="ya-form-control" id="isInhabited" />
+                <label for="isInhabited"><span>Заселен</span></label>
+            </div>
+            <div class="input-group input-text checkbox-input floatleft">
+                <input  type="checkbox" class="ya-form-control" id="isInhabitedByUs" />
+                <label for="isInhabitedByUs"><span>Заселен через нас</span></label>
+            </div>
+            <div class="input-group input-text checkbox-input floatleft">
+                <input  type="checkbox" name="isProblem" class="ya-form-control" id="isProblem" />
+                <label for="isProblem"><span>Проблемный</span></label>
+            </div>
+        </div>
+    </div>
+    <div class="info-wrapper">
+        <h2 class="form-title">Статус прозвона:</h2>
+        <div class="info-line clearfix">
+            <div class="input-group input-text floatleft">
+                <label for="callStatus">Статус прозвона:</label>
+                <select type="text" class="ya-form-control" id="callStatus">
+                        <option value="200">ОК</option>
+                        <option value="500">Н.Д.</option>
+                        <option value="404">Н.О.</option>
+                </select>
+            </div>
+            <div class="input-group input-text floatleft">
+                <label for="source_id">Источник *</label>
+                <select type="text" class="ya-form-control" id="source_id">
+                        <option value=""></option>
+                    {{#each sources}}
+                        <option value="{{_id}}">{{sourceName}}</option>
+                    {{/each}}
+                </select>
+            </div>
+            <div class="input-group input-text floatleft">
+                <label for="notes">Заметки:</label>
+                <textarea placeholder="Заметки" class="ya-form-control" id="notes"></textarea>
+            </div>
+        </div>
+    </div>
+</template>

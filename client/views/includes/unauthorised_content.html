@@ -1,0 +1,11 @@
+<template name="unAuthorisedContent">
+    <div class="content-wrapper shadow-content clearfix">
+        <article id="article" class="grid-1 item-1">
+            {{> notices}}
+            <div id="content">
+                {{> yield}}
+                {{> yield "load"}}
+            </div>
+        </article>
+    </div>
+</template>

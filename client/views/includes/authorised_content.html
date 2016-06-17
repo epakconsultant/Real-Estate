@@ -1,0 +1,26 @@
+<template name="authorisedContent">
+        <header id="header" class="admin-header">
+            {{> headerLayout}}
+        </header>
+        <div class="content-wrapper shadow-content clearfix">
+        	<aside id="aside" class="grid-4 item-1">
+                <div id="sidebar">
+                    {{> menu}}
+                </div>
+            </aside>
+            <article id="article" class="grid-4-1 item-2">
+                {{> notices}}
+                <div id="content">
+                    {{> yield}}
+                    {{> yield "load"}}
+                </div>
+            </article>
+        </div>
+        <footer id="footer" class="admin-footer">
+            <div class="content-wrapper">
+                <div class="grid-1 item-1">
+                    <p>© 2016 Sajjad Hussain The Real Estate App.</p>
+                </div>
+            </div>
+        </footer>
+</template>

@@ -1,0 +1,27 @@
+<template name="resources">
+    <h1>Список ресурсов</h1>
+    <div class="ya-actions actions-btns">
+        <a href="{{pathFor 'resourceNew'}}" class="ya-secondary-btn" id="create">Добавить ресурс</a>
+    </div>
+    <div class="list-table">
+        <table class="ya-table">
+            <thead>
+                <tr class="pseudo-table-row table-titles">
+                    <th class="table-cell-1">
+                        <span class="sortLink">Ресурс</span>
+                    </th>
+                    <th class="table-cell-3">
+                        <span>Действия</span>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#each resources}}
+                    {{> resourceListItem}}
+                {{else}}
+                    {{> resourceListEmpty}}
+                {{/each}}
+            </tbody>
+        </table>
+    </div>
+</template>

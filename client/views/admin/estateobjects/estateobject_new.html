@@ -1,0 +1,272 @@
+<template name="estateobjectNew">
+    <div class="page-header">
+        <h1>
+            Создание объекта
+        </h1>
+    </div>
+    <div class="ya-actions">
+        <a href="#" class="ya-secondary-btn ya-btn save-btn saveBtn" data-id="saveBtn"><span class="fa fa-pencil-square-o"></span>Сохранить</a>
+        <a href="#" class="ya-third-btn ya-btn save-btn saveAndCloseBtn" data-id="saveAndCloseBtn"><span class="fa fa-check"></span>Сохранить и закрыть</a>
+        <a href="#" class="ya-third-btn ya-btn save-btn saveAndCreateBtn" data-id="saveAndCreateBtn"><span class="fa fa-plus"></span>Сохранить и создать</a>
+        <a href={{pathFor 'estateobjects'}} class="ya-third-btn ya-btn ya-warn backBtn" data-id="backBtn"><span class="fa fa-times-circle"></span>Отменить</a>
+    </div>
+    <div class="clearfix">
+        <div class="ya-half-max">
+            <div class="ya-half-spacer-big">
+                <div class="info-wrapper">
+                    <h2 class="form-title">Объект на карте:</h2>
+                    <div class="info-line clearfix">
+                        <div id="map-wrapper">
+
+                        </div>
+                    </div>
+                </div>
+                <div class="info-wrapper">
+                    <h2 class="form-title">Местоположение:</h2>
+                    <div class="info-line clearfix">
+                        <div class="input-group input-text floatleft">
+                            <label for="objectName">Название ЖК (дома) *</label>
+                            <input type="text" class="ya-form-control full-width" id="objectName" placeholder="Название ЖК (дома)" value="" />
+                        </div>
+                    </div>
+                    <div class="info-line clearfix">
+                        <div class="input-group input-text floatleft">
+                            <div class="input-group input-text floatleft">
+                                <label for="price">Город *</label>
+                                <input type="text" class="ya-form-control" id="price" placeholder="Город" value="{{cityName}}" />
+                            </div>
+                        </div>
+                        <div class="input-group input-text floatleft">
+                            <label for="cityblock_id">Район города *</label>
+                            <select type="text" class="ya-form-control" id="cityblock_id">
+                                {{#each cityblocks}}
+                                    <option value="{{_id}}">{{cityBlockNumber}}. {{cityBlockName}}</option>
+                                {{/each}}
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="info-wrapper">
+                    <div class="info-line clearfix">
+                        <div class="input-group input-text floatleft">
+                            <label for="street">Улица *</label>
+                            <input type="text" class="ya-form-control full-width" id="street" placeholder="Улица" value="" />
+                        </div>
+                    </div>
+                </div>
+                <div class="info-wrapper">
+                    <div class="info-line clearfix">
+                        <div class="input-group input-text floatleft">
+                            <label for="houseNumber">№ дома</label>
+                            <input type="text" class="ya-form-control quoter-width" id="houseNumber" placeholder="№ дома" value="" />
+                        </div>
+                        <div class="input-group input-text floatleft">
+                            <label for="corpNumber">Корп</label>
+                            <input type="text" class="ya-form-control quoter-width" id="corpNumber" placeholder="Корп" value="" />
+                        </div>
+                        <div class="input-group input-text floatleft">
+                            <label for="strNumber">Стр</label>
+                            <input type="text" class="ya-form-control quoter-width" id="strNumber" placeholder="Стр" value="" />
+                        </div>
+                    </div>
+                </div>
+                <div class="info-wrapper">
+                    <div class="info-line clearfix">
+                        <div class="input-group input-text checkbox-input floatright">
+                            <input  type="checkbox" class="ya-form-control" id="isMapCorrect" />
+                            <label for="isMapCorrect"><span>На карте отображено верно</span></label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="info-wrapper">
+                    <div class="tabs-controls clearfix">
+                        <select type="text" class="ya-form-control hidden-input" id="category">
+                                <option value="newbuild" selected="selected">Новостройка</option>
+                                <option value="oldbuild">Вторичное жилье</option>
+                        </select>
+                        <ul class="clearfix">
+                            <li>
+                                <a href="#" id="newbuild" class="active-tab">Новостройка<span class="ya-hide-line"></span></a>
+                            </li>
+                            <li>
+                                <a href="#" id="oldbuild">Вторичное жилье<span class="ya-hide-line"></span></a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="tabs-content">
+                        <div class="info-line clearfix">
+                            <div class="input-group input-text floatleft">
+                                <label for="yearOfEnd">Год сдачи *</label>
+                                <select type="text" class="ya-form-control  quoter-width" id="yearOfEnd">
+                                    <option value="">Год сдачи</option>
+                                    {{#each years}}
+                                        <option value="{{year}}">{{year}}</option>
+                                    {{/each}}
+                                </select>
+                            </div>
+                            <div id="quartalOfEndWrap" class="input-group input-text floatleft">
+                                <label for="quartalOfEnd">Квартал *</label>
+                                <select type="text" class="ya-form-control quoter-width" id="quartalOfEnd">
+                                    <option value="">Квартал</option>
+                                    {{#each quartals}}
+                                        <option value="{{quartal}}">{{text}}</option>
+                                    {{/each}}
+                                </select>
+                            </div>
+                            <div class="input-group input-text floatleft">
+                                <label for="wallstype_id">Тип дома *</label>
+                                <select type="text" class="ya-form-control quoter-width" id="wallstype_id">
+                                    {{#each wallstypes}}
+                                        <option value="{{_id}}">{{wallsTypeName}}</option>
+                                    {{/each}}
+                                </select>
+                            </div>
+                            <div class="input-group input-text floatleft">
+                                <label for="floority">Этажность</label>
+                                <input type="text" class="ya-form-control quoter-width" id="floority" placeholder="Этажность" value="" />
+                            </div>
+                        </div>
+                        <div class="info-line clearfix">
+                            <div class="input-group input-text checkbox-input floatright">
+                                <input  type="checkbox" class="ya-form-control" id="isCar" />
+                                <label for="isCar"><span>В доме есть машиноместа</span></label>
+                            </div>
+                        </div>
+                        <div class="info-line clearfix">
+                            <div class="input-group input-text checkbox-input floatright">
+                                <input  type="checkbox" class="ya-form-control" id="isCommerce" />
+                                <label for="isCommerce"><span>В дома есть коммерческая недвижимость</span></label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="info-wrapper">
+                    <h2 class="form-title">Фото дома:</h2>
+                    <div class="info-line clearfix">
+                            {{> upload_bootstrap fileTypes='.jpg' multiple=true callbacks=myCallbacks formData=specificFormData}}
+                    </div>
+                    <div class="info-line clearfix">
+
+                        {{#each uploadedImagesArr}}
+                            {{> uploadedImagesArrItem}}
+                        {{/each}}
+                    </div>
+                </div>
+                <div class="info-wrapper">
+                    <h2 class="form-title">Планировки:</h2>
+                    <div class="info-line clearfix">
+                            {{> upload_bootstrap fileTypes='.jpg' multiple=true callbacks=planningsCallbacks formData=specificFormData}}
+                    </div>
+                    <div class="info-line clearfix">
+
+                        {{#each planningsArr}}
+                            {{> planningsImagesArrItem}}
+                        {{/each}}
+                    </div>
+                </div>
+                <div class="info-wrapper">
+                    <div class="info-line clearfix">
+                        <h2 class="form-title">Видео дома:</h2>
+                        <div class="input-group input-text">
+                            <label for="thumbVideo">Краткое видео:</label>
+                            <input type="text" class="ya-form-control full-width" id="thumbVideo" placeholder="YouTube Id" value="" />
+                        </div>
+                        <div class="videoArounder">
+                            <div id="playerThumb"></div>
+                        </div>
+                    </div>
+                    <div class="info-line clearfix">
+                        <div class="input-group input-text">
+                            <label for="fullVideo">Подробное видео:</label>
+                            <input type="text" class="ya-form-control full-width" id="fullVideo" placeholder="YouTube Id" value="" />
+                        </div>
+                        <div class="videoArounder">
+                            <div id="player"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="info-wrapper">
+                    <h2 class="form-title">Инфраструктура:</h2>
+                    <div class="info-line clearfix">
+                        <div class="input-group input-text">
+                            <label for="shops">Магазины:</label>
+                            <input type="text" class="ya-form-control full-width" id="shops" placeholder="Магазины" value="" />
+                        </div>
+                    </div>
+                    <div class="info-line clearfix">
+                        <div class="input-group input-text">
+                            <label for="tradeCenters">Торговые центры:</label>
+                            <input type="text" class="ya-form-control full-width" id="tradeCenters" placeholder="Торговые центры" value="" />
+                        </div>
+                    </div>
+                    <div class="info-line clearfix">
+                        <div class="input-group input-text">
+                            <label for="kindergardens">Детские сады:</label>
+                            <input type="text" class="ya-form-control full-width" id="kindergardens" placeholder="Детские сады" value="" />
+                        </div>
+                    </div>
+                    <div class="info-line clearfix">
+                        <div class="input-group input-text">
+                            <label for="schools">Школы:</label>
+                            <input type="text" class="ya-form-control full-width" id="schools" placeholder="Школы" value="" />
+                        </div>
+                    </div>
+                    <div class="info-line clearfix">
+                        <div class="input-group input-text">
+                            <label for="medicCenters">Медицинские центры:</label>
+                            <input type="text" class="ya-form-control full-width" id="medicCenters" placeholder="Медицинские центры" value="" />
+                        </div>
+                    </div>
+                    <div class="info-line clearfix">
+                        <div class="input-group input-text">
+                            <label for="joyCenters">Развлекательные центры:</label>
+                            <input type="text" class="ya-form-control full-width" id="joyCenters" placeholder="Развлекательные центры" value="" />
+                        </div>
+                    </div>
+                    <div class="info-line clearfix">
+                        <div class="input-group input-text">
+                            <label for="transport">Транспортная доступность:</label>
+                            <input type="text" class="ya-form-control full-width" id="transport" placeholder="Транспортная доступность" value="" />
+                        </div>
+                    </div>
+                    <div class="info-line clearfix">
+                        <div class="input-group input-text">
+                            <label for="desc">Описание дома</label>
+                            <textarea placeholder="Описание" class="full-width ya-form-control " id="desc"></textarea>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="ya-half-min">
+            <div class="ya-half-spacer">
+                <h2 class="form-title">Районы {{cityName}}:</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>№</th>
+                            <th>Описание района</th>
+                            <th>Основные магистрали</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {{#each cityblocks}}
+                            <tr>
+                                <td>{{cityBlockNumber}}</td>
+                                <td>{{cityBlockName}}</td>
+                                <td>{{cityBlockRoads}}</td>
+                            </tr>
+                        {{/each}}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="ya-actions">
+        <a href="#" class="ya-secondary-btn ya-btn save-btn saveBtn" data-id="saveBtn"><span class="fa fa-pencil-square-o"></span>Сохранить</a>
+        <a href="#" class="ya-third-btn ya-btn save-btn saveAndCloseBtn" data-id="saveAndCloseBtn"><span class="fa fa-check"></span>Сохранить и закрыть</a>
+        <a href="#" class="ya-third-btn ya-btn save-btn saveAndCreateBtn" data-id="saveAndCreateBtn"><span class="fa fa-plus"></span>Сохранить и создать</a>
+        <a href={{pathFor 'estateobjects'}} class="ya-third-btn ya-btn ya-warn backBtn" data-id="backBtn"><span class="fa fa-times-circle"></span>Отменить</a>
+    </div>
+</template>

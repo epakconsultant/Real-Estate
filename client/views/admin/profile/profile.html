@@ -1,0 +1,23 @@
+<template name="profile">
+    <div class="page-header">
+        <h1>
+            Редактирование профиля {{fullname}}
+        </h1>
+    </div>
+    <div class="info-wrapper">
+        <h2 class="form-title">Сменить пароль:</h2>
+        <div class="info-line clearfix">
+            <div class="input-group input-text floatleft">
+                <label for="typeOfEstateName">Старый пароль *</label>
+                <input type="password" name="oldPassword" class="ya-form-control " id="oldPassword" placeholder="Старый пароль" value="" />
+            </div>
+            <div class="input-group input-text floatleft">
+                <label for="typeOfEstateName">Новый пароль *</label>
+                <input type="password" name=" newPassword" class="ya-form-control " id="newPassword" placeholder="Новый пароль" value="" />
+            </div>
+        </div>
+    </div>
+    <div class="actions">
+        <a href="#" class="ya-secondary-btn ya-btn save-btn" id="saveBtn"><span class="fa fa-pencil-square-o"></span>Сохранить</a>
+    </div>
+</template>

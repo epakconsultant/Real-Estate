@@ -1,0 +1,10 @@
+<template name="cityblockListItem">
+    <tr class="table-row table-line">
+        <td class="table-cell-1">{{cityBlockName}}</td>
+        <td class="table-cell-2">{{cityName}}</td>
+        <td class="table-cell-3">{{dateFormat creationDate format="DD.MM.YYYY HH:mm"}}</td>
+        <td class="table-cell-4">
+        <a href="{{pathFor 'cityblock'}}" class="ya-secondary-btn editBtn">Редактировать</a>
+        </td>
+    </tr>
+</template>

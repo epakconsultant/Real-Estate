@@ -1,0 +1,39 @@
+<template name="estateobjectListItem">
+    <tr>
+        <td  class="status-wrapper-cell">
+            <div class="status-wrapper">
+                {{#if isActiveObj}}
+                    <span class="status-bulllet active-obj" title="Активный объект" data-id="{{_id}}"></span>
+                {{else}}
+                    <span class="status-bulllet archive-obj"  title="Архивный объект" data-id="{{_id}}"></span>
+                {{/if}}
+            </div>
+        </td>
+        <td>
+            {{dateFormat creationDate format="DD.MM.YYYY"}}
+        </td>
+        <td>
+            {{objectName}}
+        </td>
+        <td>
+            {{street}}
+        </td>
+        <td>
+            {{cityBlockName}}
+        </td>
+        <td>
+            {{categoryName}}
+        </td>
+        <td>
+            {{yearOfEnd}}
+        </td>
+        <td>
+            {{wallstypeName}}
+        </td>
+        <td>
+            <div class="ya-actions-wrapper">
+                <a href="{{pathFor 'estateobject'}}" class="ya-secondary-btn editBtn">Редактировать</a>
+            </div>
+        </td>
+    </tr>
+</template>

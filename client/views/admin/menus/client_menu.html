@@ -1,0 +1,15 @@
+<template name="clientMenu">
+
+	{{# each menuItems}}
+		<li>
+			{{#if isActive}}
+				<a href="{{pathFor path}}" class="active-menu-item"><span class="fa {{icon}}"></span>{{title}}</a>
+			{{else}}
+				<a href="{{pathFor path}}"><span class="fa {{icon}}"></span>{{title}}</a>
+			{{/if}}
+		</li>
+	{{/each}}
+	<!--li>
+		<a href="#"><span class="fa fa-user"></span>Профиль</a>
+	</li-->
+</template>

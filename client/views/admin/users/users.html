@@ -1,0 +1,36 @@
+<template name="users">
+    <h1>Пользователи</h1>
+    <div class="ya-actions actions-btns">
+        <a href="{{pathFor 'userNew'}}" class="ya-secondary-btn" id="create">Добавить пользователя</a>
+    </div>
+    <div class="users list-table">
+        <table class="users-table">
+        <thead>
+            <tr class="pseudo-table-row table-titles">
+                <th class="table-cell-2">
+                    <a href="#" class="sortLink" data-name="name.last">ФИО</a>
+                </th>
+                <th class="table-cell-3">
+                    <a href="#" class="sortLink" data-name="creationDate">Город</a>
+                </th>
+                <th class="table-cell-4">
+                    <a href="#" class="sortLink" data-name="phoneCell">Тел</a>
+                </th>
+                <th class="table-cell-5">
+                    <a href="#" class="sortLink" data-name="email">E-mail</a>
+                </th>
+                <th class="table-cell-1">
+                    <span>Действия</span>
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each users}}
+                {{> userListItem}}
+            {{else}}
+                {{> userListEmpty}}
+            {{/each}}
+        </tbody>
+    </table>
+    </div>
+</template>

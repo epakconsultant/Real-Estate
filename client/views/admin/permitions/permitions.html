@@ -1,0 +1,14 @@
+<template name="permitions">
+    <h1>Настройка прав</h1>
+    <div class="list-table">
+        <table class="ya-table">
+            <tbody>
+                {{#each resources}}
+                    {{> resourceRightsItem}}
+                {{else}}
+                    {{> resourceRightsEmpty}}
+                {{/each}}
+            </tbody>
+        </table>
+    </div>
+</template>

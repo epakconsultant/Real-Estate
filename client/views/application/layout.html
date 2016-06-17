@@ -1,0 +1,10 @@
+<template name="layout">
+    <div class="ya-wrapper">
+        {{#if currentUser}}
+            {{> authorisedContent}}
+        {{else}}
+            {{> unAuthorisedContent}}
+        {{/if}}
+    </div>
+    <a href="#" id="toTopBtn" class="ya-third-btn ya-btn"><span class="fa fa-chevron-up"></span>FaceBook</a>
+</template>

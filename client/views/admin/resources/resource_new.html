@@ -1,0 +1,21 @@
+<template name="resourceNew">
+    <div class="page-header">
+        <h1>
+            Создание ресурса
+        </h1>
+    </div>
+    <div class="ya-actions">
+        <a href="#" class="ya-secondary-btn ya-btn save-btn" id="saveBtn"><span class="fa fa-pencil-square-o"></span>Сохранить</a>
+        <a href="#" class="ya-third-btn ya-btn save-btn" id="saveAndCloseBtn"><span class="fa fa-check"></span>Сохранить и закрыть</a>
+        <a href="#" class="ya-third-btn ya-btn save-btn" id="saveAndCreateBtn"><span class="fa fa-plus"></span>Сохранить и создать</a>
+        <a href={{pathFor 'resources'}} class="ya-third-btn ya-btn ya-warn" id="backBtn"><span class="fa fa-times-circle"></span>Отменить</a>
+    </div>
+    <div class="info-wrapper">
+        <div class="info-line clearfix">
+            <div class="input-group input-text">
+                <label for="resourceName">Название ресурса *</label>
+                <input type="text" class="ya-form-control" id="resourceName" placeholder="Ресурс" value="" />
+            </div>
+        </div>
+    </div>
+</template>

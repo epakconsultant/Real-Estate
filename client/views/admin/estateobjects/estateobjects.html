@@ -1,0 +1,74 @@
+<template name="estateobjects">
+    <h1>Список объектов</h1>
+    <div class="ya-actions actions-btns clearfix">
+        <div class="clearfix">
+            <a href="{{pathFor 'estateobjectNew'}}" class="ya-secondary-btn" id="create">Добавить объект</a>
+        </div>
+        <div class="search-box ya-wide-search">
+        <form id="ya-search-form">
+            <div class="ya-search-line">
+                <input type="text" class="ya-form-control " name="search" id="search-phrase" placeholder="Поиск..." value="{{query}}" />
+                <input type="text" class="ya-form-control " name="street" id="street" placeholder="Улица..." value="{{street}}" />
+                <select type="text" name="cityblock_id[]" placeholder="Район города" class="ya-form-control " id="cityblock_id" multiple="multiple">
+                    <option class="ya-placeholder" value="">Район города</option>
+                    {{#each cityblocks}}
+                        <option value="{{_id}}" {{ifSelected}}>{{cityBlockName}}</option>
+                    {{/each}}
+                </select>
+                <select type="text" name="wallstype_id[]" placeholder="Тип стен" class="ya-form-control " id="wallstype_id" multiple="multiple">
+                    <option class="ya-placeholder" value="">Тип стен</option>
+                    {{#each wallstypes}}
+                        <option value="{{_id}}" {{ifSelected}}>{{wallsTypeName}}</option>
+                    {{/each}}
+                </select>
+            </div>
+            <div class="ya-search-line">
+                <select type="text" name="category[]" placeholder="Категория" class="ya-form-control " id="category" multiple="multiple">
+                    <option class="ya-placeholder" value="">Категория</option>
+                    {{#each categories}}
+                        <option value="{{_id}}" {{ifSelected}}>{{categoryName}}</option>
+                    {{/each}}
+                </select>
+                <select type="text" name="estateobjectStatus[]" placeholder="Статус" class="ya-form-control " id="estateobjectStatus" multiple="multiple">
+                    <option class="ya-placeholder" value="">Статус</option>
+                    {{#each estateobjectStatuses}}
+                        <option value="{{_id}}" {{ifSelected}}>{{estateobjectStatusName}}</option>
+                    {{/each}}
+                </select>
+                <input type="text" class="ya-form-control " name="yearOfEndStart" id="yearOfEndStart" placeholder="Год сдачи от" value="{{#if yearOfEndStart}}{{yearOfEndStart}}{{/if}}" />
+                <input type="text" class="ya-form-control " name="yearOfEndEnd" id="yearOfEndEnd" placeholder="Год сдачи до" value="{{#if yearOfEndEnd}}{{yearOfEndEnd}}{{/if}}" />
+            </div>
+            <div class="ya-search-line">
+                <input type="submit" class="ya-secondary-btn" id="searchBtn" value="Поиск">
+            </div>
+        </form>
+        </div>
+    </div>
+    <div class="users list-table">
+        <table class="cities-table wide-table">
+            <thead>
+            <tr>
+                <th><span>Статус</span></th>
+                <th><span>Добавлен</span></th>
+                <th><span>Название</span></th>
+                <th><span>Улица</span></th>
+                <th><span>Район</span></th>
+                <th><span>Категория</span></th>
+                <th><span>Год сдачи</span></th>
+                <th><span>Тип стен</span></th>
+                <th><span>Действия</span></th>
+            </tr>
+        </thead>
+            <tbody>
+                {{#each estateobjects}}
+                    {{> estateobjectListItem}}
+                {{else}}
+                    {{> estateobjectListEmpty}}
+                {{/each}}
+            </tbody>
+        </table>
+    </div>
+    {{#if nextPath}}
+        <a class="load-more" href="{{nextPath}}">Загрузить еще...</a>
+    {{/if}}
+</template>

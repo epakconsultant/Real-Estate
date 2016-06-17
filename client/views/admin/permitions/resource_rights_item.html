@@ -1,0 +1,25 @@
+<template name="resourceRightsItem">
+    <tr><td>
+        <h2 class="resource-title">{{resourceName}}</h2>
+            {{#each rolesArr}}
+                <h3>{{roleName}}</h3>
+                {{#each permArr}}
+                    <div class="info-wrapper {{roleName}}">
+                        <div class="info-line clearfix">
+                            <div class="input-group input-text checkbox-input floatleft">
+                                <input  type="checkbox" {{isActive}} class="ya-form-control {{permitionName}}" id="{{permitionId}}" />
+                                <label for="{{permitionId}}"><span>{{permitionName}}</span></label>
+                            </div>
+                            <div class="input-group input-text floatleft">
+                                <label for="{{fieldsId}}">Поля</label>
+                                <input type="text" class="ya-form-control" id="{{fieldsId}}" placeholder="Поля" value="{{fields}}" />
+                            </div>
+                        </div>
+                    </div>
+                {{/each}}
+            {{/each}}
+        <div class="ya-actions">
+            <a href="#" class="ya-secondary-btn ya-btn save-btn"><span class="fa fa-pencil-square-o"></span>Сохранить</a>
+        </div>
+    </td></tr>
+</template>

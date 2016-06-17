@@ -1,0 +1,11 @@
+<template name="userListItem">
+    <tr class="table-row table-line">
+        <td class="table-cell-2">{{namelast}} {{namefirst}} {{namemiddle}}</td>
+        <td class="table-cell-3">{{cityName}}</td>
+        <td class="table-cell-4">+{{phoneCell}}</td>
+        <td class="table-cell-5">{{email}}</td>
+        <td class="table-cell-6">
+        <a href="{{pathFor 'user'}}" class="ya-secondary-btn editBtn">Редактировать</a>
+        </td>
+    </tr>
+</template>

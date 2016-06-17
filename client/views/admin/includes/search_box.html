@@ -1,0 +1,33 @@
+<template name="searchBox">
+    {{#if currentUser}}
+        {{#if isInRole 'manager'}}
+            <div class="ya-top-search-box">
+                <form id="ya-top-search-box-form">
+                    <span id="search-info">
+                        <span id="search-info-text"></span>
+                        <span id="close-search-info">x</span>
+                    </span>
+                    <input type="text" id="search-phone" value="" placeholder="Поиск...">
+                    <a href="#" id="to-black-list" title="В черный список">
+                        <span class="fa fa-thumbs-o-down"></span>
+                    </a>
+                </form>
+            </div>
+        {{/if}}
+        {{#if isInRole 'admin'}}
+            <div class="ya-top-search-box">
+                <form id="ya-top-search-box-form">
+                    <span id="search-info">
+                        <span id="search-info-text"></span>
+                        <span id="close-search-info">x</span>
+                    </span>
+                    <input type="text" id="search-phone" value="" placeholder="Поиск...">
+                    <a href="#" id="to-black-list" title="В черный список">
+                        <span class="fa fa-thumbs-o-down"></span>
+                    </a>
+                    <a href="#" id="from-black-list" title="Удалить из черного списка"><span class="fa fa-thumbs-o-up"></span></a>
+                </form>
+            </div>
+        {{/if}}
+    {{/if}}
+</template>

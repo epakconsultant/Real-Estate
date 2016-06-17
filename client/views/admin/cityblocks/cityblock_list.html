@@ -1,0 +1,41 @@
+<template name="cityBlocksList">
+    <h1>Список районов городов</h1>
+     <div class="ya-actions actions-btns clearfix">
+        <a href="{{pathFor 'cityblockNew'}}" class="ya-secondary-btn" id="create">Добавить район</a>
+        <div class="floatright">
+            <select type="text" class="ya-form-control" id="by-city-id">
+                <option value="">Все города</option>
+                {{#each cities}}
+                    <option value="{{_id}}" {{ifSelected}}>{{cityName}}</option>
+                {{/each}}
+            </select>
+        </div>
+    </div>
+    <div class="list-table">
+        <table class="ya-table">
+            <thead>
+                <tr class="pseudo-table-row table-titles">
+                    <th class="table-cell-1">
+                        <span>Район</span>
+                    </th>
+                    <th class="table-cell-2">
+                        <span>Город</span>
+                    </th>
+                    <th class="table-cell-3">
+                        <span>Добавлен</span>
+                    </th>
+                    <th class="table-cell-4">
+                        <span>Действия</span>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#each cityblocks}}
+                    {{> cityblockListItem}}
+                {{else}}
+                    {{> cityblockListEmpty}}
+                {{/each}}
+            </tbody>
+        </table>
+    </div>
+</template>

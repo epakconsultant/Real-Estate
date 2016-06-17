@@ -1,0 +1,5 @@
+<template name="accountLinks">
+	{{#if currentUser}}
+		<a href="{{pathFor 'profile'}}">{{userName}}</a> | <a href="#" id="logout-btn">Выход</a>
+    {{/if}}
+</template>

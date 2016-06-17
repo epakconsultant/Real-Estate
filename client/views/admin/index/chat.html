@@ -1,0 +1,37 @@
+<template name="chat">
+    <h1>Общий чат</h1>
+    <div class="ya-actions">
+        <div class="chat-form-wrapper">
+            <form id="chat-form">
+                <div class="info-wrapper">
+                    <textarea placeholder="Ваше сообщение" class="wide-input ya-form-control ya-chat-msg" id="chatMsg"></textarea>
+                </div>
+                <!--div class="info-wrapper">
+                    <input type="submit" class="ya-secondary-btn ya-btn save-btn" value="Отправить" />
+                </div-->
+            </form>
+        </div>
+    </div>
+    <div class="chat-wrapper">
+        {{#each messages}}
+            <div class="chat-message-line clearfix">
+                <div class="user-avatar">
+                    <div class="tmp-square">
+                    </div>
+                </div>
+                <div class="chat-message">
+                    <div class="chat-user-info">
+                        <span class="chat-mesage-date">
+                            {{dateFormat creationDate format="DD.MM.YYYY HH:mm"}}
+                        </span> <span class="chat-mesage-author">{{author}}</span>
+                    </div>
+                    <div class="chat-message-text">
+                        <p>{{{message}}}</p>
+                    </div>
+                </div>
+            </div>
+        {{else}}
+            <p>Нет ни одного сообщения в чате.</p>
+        {{/each}}
+    </div>
+</template>

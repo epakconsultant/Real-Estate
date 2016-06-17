@@ -1,0 +1,160 @@
+<template name="userNew">
+    <div class="page-header">
+        <h1>
+            
+Creating a user
+        </h1>
+    </div>
+    <div class="info-wrapper">
+    <h2 class="form-title">user Name:</h2>
+    <div class="info personal-info clearfix">
+        <div class="input-group">
+            <label for="namelast">Surname *</label>
+            <input type="text" name="namelast" class="ya-form-control " id="namelast" placeholder="Фамилия" value="" />
+        </div>
+        <div class="input-group">
+            <label for="namefirst">
+Name *</label>
+            <input type="text" name="namefirst" class="ya-form-control " id="namefirst" placeholder="Имя" value="" />
+        </div>
+        <div class="input-group">
+            <label for="middleName">middle name</label>
+            <input type="text" name="namemiddle" class="ya-form-control " id="namemiddle" placeholder="Отчетсво" value="" />
+        </div>
+    </div>
+    </div>
+    <div class="info-wrapper">
+        <h2 class="form-title">
+Account:</h2>
+        <div class="info login-info clearfix">
+            <div class="input-group">
+                <label for="email">E-mail *</label>
+                <input type="text" name="email" class="ya-form-control " id="email" placeholder="E-mail" value="" />
+            </div>
+            <div class="input-group">
+                <label for="password">Password *</label>
+                <input type="password" name="password" class="ya-form-control " id="password" placeholder="Пароль" value="" />
+            </div>
+        </div>
+        <div class="info admin-info clearfix">
+            <div class="input-group">
+                <label for="isActive">Active</label>
+                <input  type="checkbox" name="isActive" class="ya-form-control " id="isActive" checked />
+            </div>
+            <div class="input-group">
+                <label for="isAdmin">Admin</label>
+                <input  type="checkbox" name="isAdmin" class="ya-form-control " id="isAdmin" />
+            </div>
+        </div>
+    </div>
+    <div class="info-wrapper">
+        <h2 class="form-title">
+Contact Information:</h2>
+        <div class="info contact-info clearfix">
+            <div class="input-group">
+                <label for="phoneCell">Mobile Phone.</label>
+                <input type="text" name="phoneCell" class="ya-form-control " id="phoneCell" placeholder="Пароль" value="" />
+            </div>
+            <div class="input-group">
+                <label for="phoneHome">
+Phone dop.</label>
+                <input type="text" name="phoneHome" class="ya-form-control " id="phoneHome" placeholder="Пароль" value="" />
+            </div>
+            <div class="input-group">
+                <label for="city_id">City *</label>
+                <select type="text" name="city_id" class="ya-form-control " id="city_id">
+                    {{#each cities}}
+                        <option value="{{_id}}">{{cityName}}</option>
+                    {{/each}}
+                </select>
+            </div>
+        </div>
+    </div>
+    <div class="info-wrapper">
+        <h2 class="form-title">address:</h2>
+        <div class="inside-wrapper clearfix">
+            <div class="half">
+                <div class="info-wrapper">
+                    <h3 class="form-subtitle">
+registration Address:</h3>
+                    <div class="input-group">
+                        <label for="regAddresszipCode">
+Index</label>
+                        <input type="text" name="regAddresszipCode" class="ya-form-control " id="regAddresszipCode" placeholder="Индекс" value="" />
+                    </div>
+                    <div class="input-group">
+                        <label for="regAddressstreet">
+Street</label>
+                        <input type="text" name="regAddressstreet" class="ya-form-control " id="regAddressstreet" placeholder="Улица" value="" />
+                    </div>
+                    <div class="input-group">
+                        <label for="regAddresshouseNumber">House number</label>
+                        <input type="text" name="regAddresshouseNumber" class="ya-form-control " id="regAddresshouseNumber" placeholder="Номер дома" value="" />
+                    </div>
+                    <div class="input-group">
+                        <label for="regAddresshouseCorp">Corp..</label>
+                        <input type="text" name="regAddresshouseCorp" class="ya-form-control " id="regAddresshouseCorp" placeholder="Корп." value="" />
+                    </div>
+                    <div class="input-group">
+                        <label for="regAddressapartment">Apartment</label>
+                        <input type="text" name="regAddressapartment" class="ya-form-control " id="regAddressapartment" placeholder="Квартира" value="" />
+                    </div>
+                </div>
+            </div>
+            <div class="half">
+                <div class="info-wrapper">
+                    <h3 class="form-subtitle">Actual address :</h3>
+                    <div class="input-group">
+                        <label for="realAddresszipCode">Index</label>
+                        <input type="text" name="realAddresszipCode" class="ya-form-control " id="realAddresszipCode" placeholder="Индекс" value="" />
+                    </div>
+                    <div class="input-group">
+                        <label for="realAddressstreet">
+Streetа</label>
+                        <input type="text" name="realAddressstreet" class="ya-form-control " id="realAddressstreet" placeholder="Улица" value="" />
+                    </div>
+                    <div class="input-group">
+                        <label for="realAddresshouseNumber">
+House number</label>
+                        <input type="text" name="realAddresshouseNumber" class="ya-form-control " id="realAddresshouseNumber" placeholder="Номер дома" value="" />
+                    </div>
+                    <div class="input-group">
+                        <label for="realAddresshouseCorp">Corp.</label>
+                        <input type="text" name="realAddresshouseCorp" class="ya-form-control " id="realAddresshouseCorp" placeholder="Корп." value="" />
+                    </div>
+                    <div class="input-group">
+                        <label for="realAddressapartment">Apartment</label>
+                        <input type="text" name="realAddressapartment" class="ya-form-control " id="realAddressapartment" placeholder="Квартира" value="" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="info-wrapper">
+        <h2 class="form-title">Паспорт:</h2>
+        <div class="info passportinfo clearfix">
+            <div class="input-group">
+                <label for="passportseria">Серия</label>
+                <input type="text" name="passportseria" class="ya-form-control " id="passportseria" placeholder="Серия" value="" />
+            </div>
+            <div class="input-group">
+                <label for="passportid">Номер</label>
+                <input type="text" name="passportid" class="ya-form-control " id="passportid" placeholder="Номер" value="" />
+            </div>
+            <div class="input-group">
+                <label for="passportdateOfReceving}">Дата выдачи</label>
+                <input type="text" name="passportdateOfReceving}" class="ya-form-control " id="passportdateOfReceving}" placeholder="Дата выдачи" value="" />
+            </div>
+        </div>
+        <div class="info passportinfo clearfix">
+            <div class="input-group">
+                <label for="passportwhereReseved">Где выдан</label>
+                <input type="text" name="passportwhereReseved" class="ya-form-control " id="passportwhereReseved" placeholder="Где выдан" value="" />
+            </div>
+        </div>
+    </div>
+    <div class="actions">
+        <a href="#" class="btn btn-primary" id="saveBtn">Сохранить</a>
+        <a href={{pathFor 'users'}} class="btn btn-default" id="backBtn">Назад</a>
+    </div>
+</template>

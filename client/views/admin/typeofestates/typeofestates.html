@@ -1,0 +1,30 @@
+<template name="typeofestates">
+    <h1>Список типов недвижимости</h1>
+    <div class="ya-actions actions-btns">
+        <a href="{{pathFor 'typeofestateNew'}}" class="ya-secondary-btn" id="create">Добавить тип недвижимости</a>
+    </div>
+    <div class="list-table">
+        <table class="ya-table">
+            <thead>
+                <tr class="pseudo-table-row table-titles">
+                    <th class="table-cell-1">
+                        <span>Тип недвижимости</span>
+                    </th>
+                    <th class="table-cell-2">
+                        <span>Добавлен</span>
+                    </th>
+                    <th class="table-cell-3">
+                        <span>Действия</span>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#each typeofestates}}
+                    {{> typeofestateListItem}}
+                {{else}}
+                    {{> typeofestateListEmpty}}
+                {{/each}}
+            </tbody>
+        </table>
+    </div>
+</template>

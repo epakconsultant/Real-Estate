@@ -1,0 +1,13 @@
+<template name="wallstypeListItem">
+    <tr class="table-row table-line">
+        <td class="table-cell-1">
+            {{wallsTypeName}}
+        </td>
+        <td class="table-cell-2">
+            {{dateFormat creationDate format="DD.MM.YYYY HH:mm"}}
+        </td>
+        <td class="table-cell-3">
+            <a href="{{pathFor 'wallstype'}}" class="ya-secondary-btn editBtn">Edit</a>
+        </td>
+    </tr>
+</template>

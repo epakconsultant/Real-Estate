@@ -1,0 +1,45 @@
+<template name="clientsList">
+    <div class="ya-actions actions-btns clearfix">
+        <a href="{{pathFor 'clientNew'}}" class="ya-secondary-btn" id="create">Добавить клиента</a>
+        <div class="floatright">
+            <div class="search-box">
+                <form id="search-box-form">
+                    <input type="text" class="ya-form-control " id="search-phrase" placeholder="Поиск..." value="" /> 
+                    <input type="submit" class="ya-secondary-btn" id="searchBtn" value="Поиск" />
+                </form>
+            </div>
+        </div>
+         <div class="floatright">
+            <select type="text" class="ya-form-control" id="by-status">
+                <option value="active" {{ifActive}}>Актуальные</option>
+                <option value="new" {{ifNew}}>Новые</option>
+                <option value="adv" {{ifAdv}}>В работе</option>
+                <option value="archive" {{ifArchive}}>Архивные</option>
+            </select>
+        </div>
+    </div>
+    <div class="users list-table">
+        <table class="cities-table">
+            <thead>
+            <tr>
+                <th><span>Добавлен</span></th>
+                <th><span>Проверен</span></th>
+                <th><span>ФИО</span></th>
+                <th><span>Тел</span></th>
+                <th><span>Заметки</span></th>
+                <th><span>Действия</span></th>
+            </tr>
+        </thead>
+            <tbody>
+                {{#each clients}}
+                    {{> clientListItem}}
+                {{else}}
+                    {{> clientListEmpty}}
+                {{/each}}
+            </tbody>
+        </table>
+    </div>
+    {{#if nextPath}}
+        <a class="load-more" href="{{nextPath}}">Загрузить еще...</a>
+    {{/if}}
+</template>

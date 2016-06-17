@@ -1,0 +1,30 @@
+<template name="sources">
+    <h1>Список источников</h1>
+    <div class="ya-actions actions-btns">
+        <a href="{{pathFor 'sourceNew'}}" class="ya-secondary-btn" id="create">Добавить источник</a>
+    </div>
+    <div class="list-table">
+        <table class="ya-table">
+            <thead>
+                <tr class="pseudo-table-row table-titles">
+                    <th class="table-cell-1">
+                        <span>Источник</span>
+                    </th>
+                    <th class="table-cell-2">
+                        <span>Добавлен</span>
+                    </th>
+                    <th class="table-cell-3">
+                        <span>Действия</span>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#each sources}}
+                    {{> sourceListItem}}
+                {{else}}
+                    {{> sourceListEmpty}}
+                {{/each}}
+            </tbody>
+        </table>
+    </div>
+</template>

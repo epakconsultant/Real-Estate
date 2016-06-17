@@ -1,0 +1,23 @@
+<template name="clientListItem">
+    <tr class="{{isInBlackList}}">
+        <td>
+            {{dateFormat creationDate format="DD.MM.YYYY HH:mm"}}
+        </td>
+        <td>
+            {{dateFormat modifyDate format="DD.MM.YYYY HH:mm"}}
+        </td>
+        <td>
+            {{fullname}}
+        </td>
+        <td>
+            {{phone}}
+        </td>
+        <td>
+            <div id="manager-notes" contenteditable>{{notes}}</div>
+        </td>
+        <td>
+            <a href="{{pathFor 'client'}}" class="ya-secondary-btn editBtn">Редактировать</a><br>
+            <button type="button" class="ya-third-btn archiveBtn" data-id="{{_id}}">Архивировать</button>
+        </td>
+    </tr>
+</template>

@@ -1,0 +1,150 @@
+<template name="userItem">
+    <div class="page-header">
+        <h1>
+            Создание пользователя 
+        </h1>
+    </div>
+    <div class="info-wrapper">
+    <h2 class="form-title">ФИО пользователя:</h2>
+    <div class="info personal-info clearfix">
+        <div class="input-group">
+            <label for="namelast">Фамилия *</label>
+            <input type="text" name="namelast" class="ya-form-control " id="namelast" placeholder="Фамилия" value="{{namelast}}" />
+        </div>
+        <div class="input-group">
+            <label for="namefirst">Имя *</label>
+            <input type="text" name="namefirst" class="ya-form-control " id="namefirst" placeholder="Имя" value="{{namefirst}}" />
+        </div>
+        <div class="input-group">
+            <label for="middleName">Отчество</label>
+            <input type="text" name="namemiddle" class="ya-form-control " id="namemiddle" placeholder="Отчетсво" value="{{namemiddle}}" />
+        </div>
+    </div>
+    </div>
+    <div class="info-wrapper">
+        <h2 class="form-title">Аккаунт:</h2>
+            <div class="info login-info clearfix">
+                <div class="input-group">
+                <label for="email">E-mail *</label>
+                <input type="text" name="email" class="ya-form-control " id="email" placeholder="E-mail" value="{{email}}" />
+            </div>
+            <div class="input-group">
+                <label for="password">Пароль *</label>
+                <input type="password" name="password" class="ya-form-control " id="password" placeholder="Пароль" value="" />
+            </div>
+        </div>
+        <div class="info admin-info clearfix">
+            <div class="input-group">
+                <label for="isActive">Активный</label>
+                <input  type="checkbox" name="isActive" class="ya-form-control " id="isActive" {{ifChecked}} />
+            </div>
+            <div class="input-group">
+                <label for="isAdmin">Админ</label>
+                <input  type="checkbox" name="isAdmin" class="ya-form-control " id="isAdmin" {{ifAdmin}} />
+            </div>
+        </div>
+    </div>
+    <div class="info-wrapper">
+        <h2 class="form-title">Контактная информация:</h2>
+            <div class="info contact-info clearfix">
+                <div class="input-group">
+                <label for="phoneCell">Телефон моб.</label>
+                <input type="text" name="phoneCell" class="ya-form-control " id="phoneCell" placeholder="Пароль" value="{{phoneCell}}" />
+            </div>
+            <div class="input-group">
+                <label for="phoneHome">Телефон доп.</label>
+                <input type="text" name="phoneHome" class="ya-form-control " id="phoneHome" placeholder="Пароль" value="{{phoneHome}}" />
+            </div>
+            <div class="input-group">
+                <label for="city_id">Город *</label>
+                <select type="text" name="city_id" class="ya-form-control " id="city_id">
+                    {{#each cities}}
+                        <option value="{{_id}}" {{ifSelected}}>{{cityName}}</option>
+                    {{/each}}
+                </select>
+            </div>
+        </div>
+    </div>
+    <div class="info-wrapper">
+        <h2 class="form-title">Адреса:</h2>
+        <div class="inside-wrapper clearfix">
+            <div class="half">
+                <div class="info-wrapper">
+                    <h3 class="form-subtitle">Адрес регистрации:</h3>
+                    <div class="input-group">
+                        <label for="regAddresszipCode">Индекс</label>
+                        <input type="text" name="regAddresszipCode" class="ya-form-control " id="regAddresszipCode" placeholder="Индекс" value="{{regAddresszipCode}}" />
+                    </div>
+                    <div class="input-group">
+                        <label for="regAddressstreet">Улица</label>
+                        <input type="text" name="regAddressstreet" class="ya-form-control " id="regAddressstreet" placeholder="Улица" value="{{regAddressstreet}}" />
+                    </div>
+                    <div class="input-group">
+                        <label for="regAddresshouseNumber">Номер дома</label>
+                        <input type="text" name="regAddresshouseNumber" class="ya-form-control " id="regAddresshouseNumber" placeholder="Номер дома" value="{{regAddresshouseNumber}}" />
+                    </div>
+                    <div class="input-group">
+                        <label for="regAddresshouseCorp">Корп.</label>
+                        <input type="text" name="regAddresshouseCorp" class="ya-form-control " id="regAddresshouseCorp" placeholder="Корп." value="{{regAddresshouseCorp}}" />
+                    </div>
+                    <div class="input-group">
+                        <label for="regAddressapartment">Квартира</label>
+                        <input type="text" name="regAddressapartment" class="ya-form-control " id="regAddressapartment" placeholder="Квартира" value="{{regAddressapartment}}" />
+                    </div>
+                </div>
+            </div>
+            <div class="half">
+                <div class="info-wrapper">
+                    <h3 class="form-subtitle">Адрес фактический:</h3>
+                        <div class="input-group">
+                        <label for="realAddresszipCode">Индекс</label>
+                        <input type="text" name="realAddresszipCode" class="ya-form-control " id="realAddresszipCode" placeholder="Индекс" value="{{realAddresszipCode}}" />
+                    </div>
+                    <div class="input-group">
+                        <label for="realAddressstreet">Улица</label>
+                        <input type="text" name="realAddressstreet" class="ya-form-control " id="realAddressstreet" placeholder="Улица" value="{{realAddress.street}}" />
+                    </div>
+                    <div class="input-group">
+                        <label for="realAddresshouseNumber">Номер дома</label>
+                        <input type="text" name="realAddresshouseNumber" class="ya-form-control " id="realAddresshouseNumber" placeholder="Номер дома" value="{{realAddresshouseNumber}}" />
+                    </div>
+                    <div class="input-group">
+                        <label for="realAddresshouseCorp">Корп.</label>
+                        <input type="text" name="realAddresshouseCorp" class="ya-form-control " id="realAddresshouseCorp" placeholder="Корп." value="{{realAddresshouseCorp}}" />
+                    </div>
+                    <div class="input-group">
+                        <label for="realAddressapartment">Квартира</label>
+                        <input type="text" name="realAddressapartment" class="ya-form-control " id="realAddressapartment" placeholder="Квартира" value="{{realAddressapartment}}" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="info-wrapper">
+        <h2 class="form-title">Паспорт:</h2>
+        <div class="input-group">
+            <label for="passportseria">Серия</label>
+            <input type="text" name="passportseria" class="ya-form-control " id="passportseria" placeholder="Серия" value="{{passportseria}}" />
+        </div>
+        <div class="input-group">
+            <label for="passportid">Номер</label>
+            <input type="text" name="passportid" class="ya-form-control " id="passportid" placeholder="Номер" value="{{passportid}}" />
+        </div>
+        <div class="input-group">
+            <label for="passportdateOfReceving}">Дата выдачи</label>
+            <input type="text" name="passportdateOfReceving" class="ya-form-control " id="passportdateOfReceving" placeholder="Дата выдачи" value="{{passportdateOfReceving}}" />
+        </div>
+    
+        <div class="info passportinfo clearfix">
+            <div class="input-group">
+                <label for="passportwhereReseved">Где выдан</label>
+                <input type="text" name="passportwhereReseved" class="ya-form-control " id="passportwhereReseved" placeholder="Где выдан" value="{{passportwhereReseved}}" />
+            </div>
+        </div>
+    </div>
+    <div class="actions">
+        <a href="#" class="btn btn-primary" id="saveBtn">Сохранить</a>
+        <a href={{pathFor 'users'}} class="btn btn-default" id="backBtn">Назад</a>
+        <a href="#" class="btn btn-default" id="removeBtn">Удалить пользователя</a>
+    </div>
+</template>
