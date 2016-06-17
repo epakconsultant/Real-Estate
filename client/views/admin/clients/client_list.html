@@ -1,20 +1,20 @@
 <template name="clientsList">
     <div class="ya-actions actions-btns clearfix">
-        <a href="{{pathFor 'clientNew'}}" class="ya-secondary-btn" id="create">Добавить клиента</a>
+        <a href="{{pathFor 'clientNew'}}" class="ya-secondary-btn" id="create">Add a client</a>
         <div class="floatright">
             <div class="search-box">
                 <form id="search-box-form">
-                    <input type="text" class="ya-form-control " id="search-phrase" placeholder="Поиск..." value="" /> 
-                    <input type="submit" class="ya-secondary-btn" id="searchBtn" value="Поиск" />
+                    <input type="text" class="ya-form-control " id="search-phrase"  value="" /> 
+                    <input type="submit" class="ya-secondary-btn" id="searchBtn"  />
                 </form>
             </div>
         </div>
          <div class="floatright">
             <select type="text" class="ya-form-control" id="by-status">
-                <option value="active" {{ifActive}}>Актуальные</option>
-                <option value="new" {{ifNew}}>Новые</option>
-                <option value="adv" {{ifAdv}}>В работе</option>
-                <option value="archive" {{ifArchive}}>Архивные</option>
+                <option value="active" {{ifActive}}>active</option>
+                <option value="new" {{ifNew}}>new</option>
+                <option value="adv" {{ifAdv}}>adv</option>
+                <option value="archive" {{ifArchive}}>Аarchive</option>
             </select>
         </div>
     </div>
@@ -22,12 +22,15 @@
         <table class="cities-table">
             <thead>
             <tr>
-                <th><span>Добавлен</span></th>
+                <th><span>
+Added</span></th>
                 <th><span>Проверен</span></th>
-                <th><span>ФИО</span></th>
-                <th><span>Тел</span></th>
-                <th><span>Заметки</span></th>
-                <th><span>Действия</span></th>
+                <th><span>Full name</span></th>
+                <th><span>
+Phone</span></th>
+                <th><span>
+Notes</span></th>
+                <th><span>Actions</span></th>
             </tr>
         </thead>
             <tbody>
@@ -40,6 +43,6 @@
         </table>
     </div>
     {{#if nextPath}}
-        <a class="load-more" href="{{nextPath}}">Загрузить еще...</a>
+        <a class="load-more" href="{{nextPath}}">Load more...</a>
     {{/if}}
 </template>

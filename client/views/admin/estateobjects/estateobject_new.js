@@ -149,14 +149,12 @@ Template.estateobjectNew.rendered = function() {
             $('#map-wrapper').css({
                 'height': '300px'
             });
-            // Создание экземпляра карты и его привязка к контейнеру с
-            // заданным id ("map").
+           
             myMap = new ymaps.Map('map-wrapper', {
-                // При инициализации карты обязательно нужно указать
-                // её центр и коэффициент масштабирования.
+              
                 center: [city.coordX,city.coordY], // Ярославль. Добавить к cities координаты.
                 zoom: 16,
-                // Тип покрытия карты: "Карта".
+            
                 type: 'yandex#map'
             });
 
@@ -218,7 +216,7 @@ Template.estateobjectNew.rendered = function() {
 
                 if (street) {
 
-                    var myGeoCoder = ymaps.geocode('Россия ' + city.cityName + ' ' + street + ' ' + houseNumber);
+                    var myGeoCoder = ymaps.geocode('Pakistan ' + city.cityName + ' ' + street + ' ' + houseNumber);
 
                     myGeoCoder.then(
                         function (res) {
@@ -232,7 +230,7 @@ Template.estateobjectNew.rendered = function() {
                         },
                         function (err) {
 
-                            showNotice('error', 'Ошибка при определении координат метки.');
+                            showNotice('error', 'The error in determining the coordinates of the mark.');
                         }
                     );
                 }

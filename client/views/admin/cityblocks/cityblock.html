@@ -1,37 +1,40 @@
 <template name="cityblock">
     <div class="page-header">
         <h1>
-            Редактирование района города
+            Editing district
         </h1>
     </div>
     <div class="ya-actions">
-        <a href="#" class="ya-secondary-btn ya-btn save-btn" id="saveBtn"><span class="fa fa-pencil-square-o"></span>Сохранить</a>
-        <a href="#" class="ya-third-btn ya-btn save-btn" id="saveAndCloseBtn"><span class="fa fa-check"></span>Сохранить и закрыть</a>
-        <a href="#" class="ya-third-btn ya-btn save-btn" id="saveAndCreateBtn"><span class="fa fa-plus"></span>Сохранить и создать</a>
-        <a href={{pathFor 'cityblocks'}} class="ya-third-btn ya-btn ya-warn" id="backBtn"><span class="fa fa-times-circle"></span>Отменить</a>
+        <a href="#" class="ya-secondary-btn ya-btn save-btn" id="saveBtn"><span class="fa fa-pencil-square-o"></span>
+retain</a>
+        <a href="#" class="ya-third-btn ya-btn save-btn" id="saveAndCloseBtn"><span class="fa fa-check"></span>Save and Close
+</a>
+        <a href="#" class="ya-third-btn ya-btn save-btn" id="saveAndCreateBtn"><span class="fa fa-plus"></span>
+Save and Create</a>
+        <a href={{pathFor 'cityblocks'}} class="ya-third-btn ya-btn ya-warn" id="backBtn"><span class="fa fa-times-circle"></span>cancel</a>
     </div>
    <div class="info-wrapper">
         <div class="info-line clearfix">
             <div class="input-group input-text">
-                <label for="cityBlockName">Название района города *</label>
-                <input type="text" class="ya-form-control" id="cityBlockName" placeholder="Район города" value="{{cityBlockName}}" />
+                <label for="cityBlockName">Name of district *</label>
+                <input type="text" class="ya-form-control" id="cityBlockName"  value="{{cityBlockName}}" />
             </div>
         </div>
         <div class="info-line clearfix">
             <div class="input-group input-text">
-                <label for="cityBlockRoads">Основные магистрали *</label>
-                <input type="text" class="ya-form-control" id="cityBlockRoads" placeholder="Основные магистрали" value="{{cityBlockRoads}}" />
+                <label for="cityBlockRoads">Name of district *</label>
+                <input type="text" class="ya-form-control" id="cityBlockRoads"  value="{{cityBlockRoads}}" />
             </div>
         </div>
         <div class="info-line clearfix">
             <div class="input-group input-text">
-                <label for="cityBlockNumber">№ *</label>
-                <input type="text" class="ya-form-control" id="cityBlockNumber" placeholder="№" value="{{cityBlockNumber}}" />
+                <label for="cityBlockNumber">number*</label>
+                <input type="text" class="ya-form-control" id="cityBlockNumber"  value="{{cityBlockNumber}}" />
             </div>
         </div>
         <div class="info-line clearfix">
             <div class="input-group input-text">
-                <label for="city_id">Город *</label>
+                <label for="city_id">City *</label>
                 <select type="text" class="ya-form-control" id="city_id">
                     {{#each cities}}
                         <option value="{{_id}}" {{ifSelected}}>{{cityName}}</option>
@@ -42,7 +45,7 @@
         <div class="info clearfix">
             <div class="input-group clearfix">
                 <input  type="checkbox" {{ifChecked}} class="ya-form-control" id="isActive" />
-                <label for="isActive"><span>Активный</span></label>
+                <label for="isActive"><span>Active</span></label>
             </div>
         </div>
     </div>

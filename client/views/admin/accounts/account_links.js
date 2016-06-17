@@ -23,7 +23,7 @@ Template.accountLinks.events({
 
             if (error) {
 
-                showNotice('error', 'Ошибка при выходе из системы.');
+                showNotice('error', 'Error when you log out ');
             }
 
             Router.go('indexPage');

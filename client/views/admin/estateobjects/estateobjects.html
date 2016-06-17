@@ -1,42 +1,44 @@
 <template name="estateobjects">
-    <h1>Список объектов</h1>
+    <h1>List of objects</h1>
     <div class="ya-actions actions-btns clearfix">
         <div class="clearfix">
-            <a href="{{pathFor 'estateobjectNew'}}" class="ya-secondary-btn" id="create">Добавить объект</a>
+            <a href="{{pathFor 'estateobjectNew'}}" class="ya-secondary-btn" id="create">
+Add place</a>
         </div>
         <div class="search-box ya-wide-search">
         <form id="ya-search-form">
             <div class="ya-search-line">
-                <input type="text" class="ya-form-control " name="search" id="search-phrase" placeholder="Поиск..." value="{{query}}" />
-                <input type="text" class="ya-form-control " name="street" id="street" placeholder="Улица..." value="{{street}}" />
+                <input type="text" class="ya-form-control " name="search" id="search-phrase"  value="{{query}}" />
+                <input type="text" class="ya-form-control " name="street" id="street"  value="{{street}}" />
                 <select type="text" name="cityblock_id[]" placeholder="Район города" class="ya-form-control " id="cityblock_id" multiple="multiple">
-                    <option class="ya-placeholder" value="">Район города</option>
+                    <option class="ya-placeholder" value="">
+A district of the city</option>
                     {{#each cityblocks}}
                         <option value="{{_id}}" {{ifSelected}}>{{cityBlockName}}</option>
                     {{/each}}
                 </select>
-                <select type="text" name="wallstype_id[]" placeholder="Тип стен" class="ya-form-control " id="wallstype_id" multiple="multiple">
-                    <option class="ya-placeholder" value="">Тип стен</option>
+                <select type="text" name="wallstype_id[]"  class="ya-form-control " id="wallstype_id" multiple="multiple">
+                    <option class="ya-placeholder" value="">Type of wall</option>
                     {{#each wallstypes}}
                         <option value="{{_id}}" {{ifSelected}}>{{wallsTypeName}}</option>
                     {{/each}}
                 </select>
             </div>
             <div class="ya-search-line">
-                <select type="text" name="category[]" placeholder="Категория" class="ya-form-control " id="category" multiple="multiple">
-                    <option class="ya-placeholder" value="">Категория</option>
+                <select type="text" name="category[]"  class="ya-form-control " id="category" multiple="multiple">
+                    <option class="ya-placeholder" value="">Category</option>
                     {{#each categories}}
                         <option value="{{_id}}" {{ifSelected}}>{{categoryName}}</option>
                     {{/each}}
                 </select>
-                <select type="text" name="estateobjectStatus[]" placeholder="Статус" class="ya-form-control " id="estateobjectStatus" multiple="multiple">
-                    <option class="ya-placeholder" value="">Статус</option>
+                <select type="text" name="estateobjectStatus[]"  class="ya-form-control " id="estateobjectStatus" multiple="multiple">
+                    <option class="ya-placeholder" value="">Status</option>
                     {{#each estateobjectStatuses}}
                         <option value="{{_id}}" {{ifSelected}}>{{estateobjectStatusName}}</option>
                     {{/each}}
                 </select>
-                <input type="text" class="ya-form-control " name="yearOfEndStart" id="yearOfEndStart" placeholder="Год сдачи от" value="{{#if yearOfEndStart}}{{yearOfEndStart}}{{/if}}" />
-                <input type="text" class="ya-form-control " name="yearOfEndEnd" id="yearOfEndEnd" placeholder="Год сдачи до" value="{{#if yearOfEndEnd}}{{yearOfEndEnd}}{{/if}}" />
+                <input type="text" class="ya-form-control " name="yearOfEndStart" id="yearOfEndStart"  value="{{#if yearOfEndStart}}{{yearOfEndStart}}{{/if}}" />
+                <input type="text" class="ya-form-control " name="yearOfEndEnd" id="yearOfEndEnd"  value="{{#if yearOfEndEnd}}{{yearOfEndEnd}}{{/if}}" />
             </div>
             <div class="ya-search-line">
                 <input type="submit" class="ya-secondary-btn" id="searchBtn" value="Поиск">
@@ -48,15 +50,15 @@
         <table class="cities-table wide-table">
             <thead>
             <tr>
-                <th><span>Статус</span></th>
-                <th><span>Добавлен</span></th>
-                <th><span>Название</span></th>
-                <th><span>Улица</span></th>
-                <th><span>Район</span></th>
-                <th><span>Категория</span></th>
-                <th><span>Год сдачи</span></th>
-                <th><span>Тип стен</span></th>
-                <th><span>Действия</span></th>
+                <th><span>Status</span></th>
+                <th><span>Added</span></th>
+                <th><span>Name</span></th>
+                <th><span>Street</span></th>
+                <th><span>Area</span></th>
+                <th><span>Category</span></th>
+                <th><span>Completion Year</span></th>
+                <th><span>Type of wall</span></th>
+                <th><span>Actions</span></th>
             </tr>
         </thead>
             <tbody>
@@ -69,6 +71,6 @@
         </table>
     </div>
     {{#if nextPath}}
-        <a class="load-more" href="{{nextPath}}">Загрузить еще...</a>
+        <a class="load-more" href="{{nextPath}}">Load more.</a>
     {{/if}}
 </template>

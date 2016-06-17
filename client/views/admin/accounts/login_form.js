@@ -30,7 +30,7 @@ Template.loginForm.events({
 
             if (error) {
 
-                showNotice('error', 'Неверный логин или пароль.');
+                showNotice('error', 'wrong login or password.');
             }
 
             Router.go('chat');

@@ -23,11 +23,11 @@ Template.estateobjectListItem.helpers({
 
     'categoryName': function () {
 
-        var categoryName = 'Новостройка';
+        var categoryName = 'new building';
 
         if (this.category === 'oldbuild') {
 
-            categoryName = 'Вторичное жилье';
+            categoryName = 'Resellers';
         }
 
         return categoryName;

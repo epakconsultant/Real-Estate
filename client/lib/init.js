@@ -1,11 +1,11 @@
 Meteor.startup(function () {
 
     Uploader.localisation = {
-        browse: "Файл",
-        cancelled: "Отменено",
-        remove: "Удалить",
-        upload: "Загрузить",
-        done: "Готово",
-        cancel: "Отменить"
+        browse: "File",
+        cancelled: "canceled",
+        remove: "Delete",
+        upload: "Download",
+        done: "Done",
+        cancel: "cancel"
     };
 });

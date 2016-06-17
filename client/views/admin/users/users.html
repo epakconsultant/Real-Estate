@@ -1,26 +1,29 @@
 <template name="users">
-    <h1>Пользователи</h1>
+    <h1>users</h1>
     <div class="ya-actions actions-btns">
-        <a href="{{pathFor 'userNew'}}" class="ya-secondary-btn" id="create">Добавить пользователя</a>
+        <a href="{{pathFor 'userNew'}}" class="ya-secondary-btn" id="create">
+Add user</a>
     </div>
     <div class="users list-table">
         <table class="users-table">
         <thead>
             <tr class="pseudo-table-row table-titles">
                 <th class="table-cell-2">
-                    <a href="#" class="sortLink" data-name="name.last">ФИО</a>
+                    <a href="#" class="sortLink" data-name="name.last">Full name</a>
                 </th>
                 <th class="table-cell-3">
-                    <a href="#" class="sortLink" data-name="creationDate">Город</a>
+                    <a href="#" class="sortLink" data-name="creationDate">City</a>
                 </th>
                 <th class="table-cell-4">
-                    <a href="#" class="sortLink" data-name="phoneCell">Тел</a>
+                    <a href="#" class="sortLink" data-name="phoneCell">
+Phone</a>
                 </th>
                 <th class="table-cell-5">
                     <a href="#" class="sortLink" data-name="email">E-mail</a>
                 </th>
                 <th class="table-cell-1">
-                    <span>Действия</span>
+                    <span>
+Actions</span>
                 </th>
             </tr>
         </thead>

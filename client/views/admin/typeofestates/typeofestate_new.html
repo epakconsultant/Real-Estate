@@ -1,26 +1,29 @@
 <template name="typeofestateNew">
     <div class="page-header">
         <h1>
-            Создание типа недвижимости
+            Creating the type of property
         </h1>
     </div>
      <div class="ya-actions">
-        <a href="#" class="ya-secondary-btn ya-btn save-btn" id="saveBtn"><span class="fa fa-pencil-square-o"></span>Сохранить</a>
-        <a href="#" class="ya-third-btn ya-btn save-btn" id="saveAndCloseBtn"><span class="fa fa-check"></span>Сохранить и закрыть</a>
-        <a href="#" class="ya-third-btn ya-btn save-btn" id="saveAndCreateBtn"><span class="fa fa-plus"></span>Сохранить и создать</a>
-        <a href={{pathFor 'typeofestates'}} class="ya-third-btn ya-btn ya-warn" id="backBtn"><span class="fa fa-times-circle"></span>Отменить</a>
+        <a href="#" class="ya-secondary-btn ya-btn save-btn" id="saveBtn"><span class="fa fa-pencil-square-o"></span>retain</a>
+        <a href="#" class="ya-third-btn ya-btn save-btn" id="saveAndCloseBtn"><span class="fa fa-check"></span>
+Save and Close</a>
+        <a href="#" class="ya-third-btn ya-btn save-btn" id="saveAndCreateBtn"><span class="fa fa-plus"></span>
+Save and Create</a>
+        <a href={{pathFor 'typeofestates'}} class="ya-third-btn ya-btn ya-warn" id="backBtn"><span class="fa fa-times-circle"></span>cancel</a>
     </div>
     <div class="info-wrapper">       
         <div class="info-line clearfix">
             <div class="input-group input-text">
-                <label for="typeOfEstateName">Название типа недвижимости *</label>
-                <input type="text" class="ya-form-control" id="typeOfEstateName" placeholder="Тип недвижимости" value="" />
+                <label for="typeOfEstateName">The name of the type of property *</label>
+                <input type="text" class="ya-form-control" id="typeOfEstateName"  value="" />
             </div>
         </div>
         <div class="info-line clearfix">
             <div class="input-group clearfix">
                 <input  type="checkbox" class="ya-form-control" id="isActive" checked />
-                <label for="isActive"><span>Активный</span></label>
+                <label for="isActive"><span>
+Active</span></label>
             </div>
         </div>
     </div>

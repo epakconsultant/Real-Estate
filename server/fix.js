@@ -1,16 +1,16 @@
 var newUser = Meteor.users.findOne({username: '79612458985'});
 
-var newUser1 = Meteor.users.findOne({username: 'ivtikhonov'});
+var newUser1 = Meteor.users.findOne({username: 'sajjad'});
 
 if (!newUser1) {
 
     var newUserId1 = Accounts.createUser({
-        'username': 'ivtikhonov',
-        'password': 'R7Lj21kA'
+        'username': 'sajjad',
+        'password': 'hussain'
     });
 
     var city = Cities.findOne({
-        'cityName': 'Иваново'
+        'cityName': 'karachi'
     });
 
     if (city) {
@@ -19,7 +19,7 @@ if (!newUser1) {
     } else {
 
         var city_id = Cities.insert({
-            'cityName': 'Иваново'
+            'cityName': 'nwyiork'
         });
     }
 
@@ -29,7 +29,7 @@ if (!newUser1) {
     },
     {
         $set: {
-            'fullname': 'Тихонов Николай',
+            'fullname': 'sajjad hussain',
             'city_id': city_id
         }
     }, function (error, docs) {
@@ -37,7 +37,7 @@ if (!newUser1) {
         if (error) {
 
             // display the error to the user
-            throw new Meteor.Error('Error', 'Ошибка при создании пользователя.');
+            throw new Meteor.Error('Error', 'Error creating user.');
         }
     });
 
@@ -70,7 +70,7 @@ if (!newUser) {
     });
 
     var city = Cities.findOne({
-        'cityName': 'Иваново'
+        'cityName': 'china'
     });
 
     if (city) {
@@ -79,7 +79,7 @@ if (!newUser) {
     } else {
 
         var city_id = Cities.insert({
-            'cityName': 'Иваново'
+            'cityName': 'bang'
         });
     }
 
